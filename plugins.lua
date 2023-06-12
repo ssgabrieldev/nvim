@@ -1,31 +1,29 @@
 local M = {
-  -- {
-  --   --- bufferline
-  --   "akinsho/bufferline.nvim",
-  --   dependencies = {
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  --   opts = {
-  --     options = {
-  --       offsets = {
-  --         {
-  --           filetype = "NvimTree",
-  --           text = "File Explorer",
-  --           text_align = "center",
-  --           separator = false,
-  --           padding = 1
-  --         },
-  --       },
-  --       diagnostics = "nvim_lsp",
-  --       indicator = {
-  --         style = "none",
-  --       },
-  --     },
-  --   },
-  --   lazy = false,
-  -- },
   {
-    --- lspconfig
+    "akinsho/bufferline.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      options = {
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            text_align = "center",
+            separator = false,
+            padding = 1
+          },
+        },
+        diagnostics = "nvim_lsp",
+        indicator = {
+          style = "none",
+        },
+      },
+    },
+    lazy = false,
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     event = "BufEnter",
     config = function()
@@ -78,7 +76,6 @@ local M = {
     end,
   },
   {
-    --- cmp
     "hrsh7th/nvim-cmp",
     opts = function()
       local opts = require("plugins.configs.cmp")
@@ -94,7 +91,6 @@ local M = {
     end
   },
   {
-    --- blankline
     "lukas-reineke/indent-blankline.nvim",
     opts = {
       show_current_context = true,
@@ -103,7 +99,6 @@ local M = {
     }
   },
   {
-    --- dap
     "mfussenegger/nvim-dap",
     config = function()
       local dap = require("dap")
@@ -122,7 +117,6 @@ local M = {
     end
   },
   {
-    --- dapui
     "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap"
@@ -169,7 +163,6 @@ local M = {
     end
   },
   {
-    --- nvim-tree
     "nvim-tree/nvim-tree.lua",
     opts = {
       reload_on_bufenter = true,
