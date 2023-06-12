@@ -7,6 +7,9 @@ local M = {
     tabufline = {
       enabled = false
     },
+    nvter = {
+      enabled = false
+    },
     nvdash = {
       load_on_startup = false,
       header = {
@@ -45,6 +48,22 @@ local M = {
         ["<a-j>"] = { "<CMD>resize -1<CR>", "Resize horizontal -1" },
         ["<a-k>"] = { "<CMD>resize +1<CR>", "Resize horizontal +1" },
         ["<a-l>"] = { "<CMD>vertical resize +1<CR>", "Resize vertical +1" }
+      }
+    },
+    toggleterm = {
+      n = {
+        ["<c-t>"] = {
+          function()
+            vim.cmd("exe v:count . \" ToggleTerm\"")
+          end
+        }
+      },
+      t = {
+        ["<c-t>"] = {
+          function()
+            vim.cmd("exe v:count . \" ToggleTerm\"")
+          end
+        }
       }
     },
     buferline = {
