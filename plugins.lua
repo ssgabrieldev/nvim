@@ -41,7 +41,6 @@ local M = {
       require("mason-lspconfig").setup_handlers({
         function(server_name)
           local border = "single"
-          local opts = { noremap = true, silent = true }
           local handlers = {
             ["textDocument/hover"] = vim.lsp.with(
               vim.lsp.handlers.hover,
@@ -68,18 +67,10 @@ local M = {
             border = border,
           }
 
-          local on_attach = function(_, bufnr)
-            local bufopts = {
-              noremap = true,
-              silent = true,
-              buffer = bufnr,
-            }
-          end
-
           require("lspconfig")[server_name].setup {
-            on_attach = on_attach,
             capabilities = capabilities,
             handlers = handlers,
+            single_file_support = true
           }
         end,
       })

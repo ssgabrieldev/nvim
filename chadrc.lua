@@ -52,14 +52,14 @@ local M = {
     },
     toggleterm = {
       n = {
-        ["<c-t>"] = {
+        ["<c-j>"] = {
           function()
             vim.cmd("exe v:count . \" ToggleTerm\"")
           end
         }
       },
       t = {
-        ["<c-t>"] = {
+        ["<c-j>"] = {
           function()
             vim.cmd("exe v:count . \" ToggleTerm\"")
           end
