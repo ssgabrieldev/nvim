@@ -127,12 +127,6 @@ local M = {
     },
     dap = {
       n = {
-        ["<leader>dt"] = {
-          function()
-            require("dapui").toggle()
-          end,
-          "Toggle debugger ui"
-        },
         ["<leader>dc"] = {
           function()
             require('dap.ext.vscode').load_launchjs(
@@ -143,19 +137,35 @@ local M = {
                   "javascriptreact",
                   "typescript",
                   "typescriptreact"
-                }
+                },
+                ["pwa-node"] = {
+                  "javascript",
+                  "typescript"
+                },
               }
             )
 
-            require('dap').continue()
+            vim.cmd("DapContinue")
           end,
           "Init/Resume debugger"
         },
         ["<leader>db"] = {
           function()
-            require('dap').toggle_breakpoint()
+            vim.cmd("DapToggleBreakpoint")
           end,
           "Toggle breakpoint"
+        },
+        ["<leader>dr"] = {
+          function()
+            vim.cmd("DapToggleRepl")
+          end,
+          "Show dap repl"
+        },
+        ["<leader>dl"] = {
+          function()
+            vim.cmd("DapShowLog")
+          end,
+          "Show dap logs"
         }
       }
     }

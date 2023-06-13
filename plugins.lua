@@ -108,63 +108,30 @@ local M = {
     config = function()
       local dap = require("dap")
 
-      dap.adapters["pwa-chrome"] = {
-        type = "server",
-        host = "localhost",
-        port = "${port}",
-        executable = {
-          command = vim.fn.expand("$HOME/.local/share/nvim/mason/bin/js-debug-adapter"),
-          args = {
-            "${port}"
-          },
-        }
-      }
-    end
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap"
-    },
-    config = function()
-      local dapui = require("dapui")
-
-      dapui.setup({
-        layouts = {
-          {
-            elements = {
-              {
-                id = "scopes",
-                size = 0.25
-              },
-              {
-                id = "breakpoints",
-                size = 0.25
-              },
-              {
-                id = "stacks",
-                size = 0.25
-              },
-              {
-                id = "watches",
-                size = 0.25
-              }
+      dap.adapters = {
+        ["pwa-chrome"] = {
+          type = "server",
+          host = "localhost",
+          port = "${port}",
+          executable = {
+            command = vim.fn.expand("$HOME/.local/share/nvim/mason/bin/js-debug-adapter"),
+            args = {
+              "${port}"
             },
-            position = "left",
-            size = 40
-          },
-          {
-            elements = {
-              {
-                id = "repl",
-                size = 1
-              }
+          }
+        },
+        ["pwa-node"] = {
+          type = "server",
+          host = "localhost",
+          port = "${port}",
+          executable = {
+            command = vim.fn.expand("$HOME/.local/share/nvim/mason/bin/js-debug-adapter"),
+            args = {
+              "${port}"
             },
-            position = "bottom",
-            size = 10
           }
         }
-      })
+      }
     end
   },
   {
