@@ -7,9 +7,6 @@ local M = {
     tabufline = {
       enabled = false
     },
-    nvter = {
-      enabled = false
-    },
     nvdash = {
       load_on_startup = false,
       header = {

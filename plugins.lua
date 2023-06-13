@@ -1,5 +1,9 @@
 local M = {
   {
+    "NvChad/nvterm",
+    enabled = false
+  },
+  {
     "akinsho/toggleterm.nvim",
     config = function()
       require("toggleterm").setup({
