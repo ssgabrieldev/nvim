@@ -7,7 +7,9 @@ local M = {
         { "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "Pick buffer" },
         { "<leader>bc", "<cmd>BufferLinePickClose<CR>", desc = "Close a buffer" },
         { "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", desc = "Close all buffer on the left" },
-        { "<leader>bl", "<cmd>BufferLineCloseRight<CR>", desc = "Close all buffer on the right" }
+        { "<leader>bl", "<cmd>BufferLineCloseRight<CR>", desc = "Close all buffer on the right" },
+        { "<tab>", "<cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
+        { "<s-tab>", "<cmd>BufferLineCyclePrev<CR>", desc = "Prev buffer" }
     },
     lazy = false
 }
