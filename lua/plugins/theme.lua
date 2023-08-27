@@ -1,11 +1,13 @@
 local M = {
-  "rebelot/kanagawa.nvim",
+  "catppuccin/nvim",
+  name = "catppuccin",
+  lazy = false,
   config = function()
-    require("kanagawa").setup({
-      compile = true,
+    require("catppuccin").setup({
+      flavour = 'mocha'
     })
 
-    vim.cmd("color kanagawa-dragon")
+    vim.cmd.colorscheme "catppuccin"
   end
 }
 
