@@ -1,25 +1,35 @@
 local M = {
-  "mfussenegger/nvim-dap",
+  'mfussenegger/nvim-dap',
+  keys = {
+    { '<leader>db', ':DapToggleBreakpoint<cr>', { desc = 'Toggle breakpoint' } },
+    { '<leader>dc', ':DapContinue<cr>', { desc = 'Debugger continue' } },
+    { '<leader>de', ':DapTerminate<cr>', { desc = 'Debugger continue' } },
+    { '<leader>dr', ':DapToggleRepl<cr>', { desc = 'Toggle repl' } },
+  },
   config = function()
     local dap = require('dap')
 
-    dap.adapters.firefox = {
+    dap.adapters.node2 = {
       type = 'executable',
-      command = vim.fn.stdpath("data") .. '/mason/bin/firefox-debug-adapter',
+      command = vim.fn.stdpath('data') .. '/mason/bin/node-debug2-adapter',
     }
-
-    require('dap.ext.vscode').load_launchjs()
 
     dap.configurations.javascript = {
       {  
-        name = 'Debug with Firefox',
-        type = 'firefox',
+        name = 'Node Launch',
+        type = 'node2',
         request = 'launch',
-        reAttach = true,
-        url = 'http://localhost:3000',
-        webRoot = '${workspaceFolder}',
-        firefoxExecutable = '/usr/bin/firefox'
-      }
+        program = '${file}',
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = 'inspector',
+      },
+      {
+        name = 'Node Attach to Process',
+        type = 'node2',
+        request = 'attach',
+        processId = require'dap.utils'.pick_process,
+      },
     }
   end
 }
