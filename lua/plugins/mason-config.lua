@@ -9,6 +9,8 @@ local M = {
 function M.config()
   require("mason-lspconfig").setup({})
   require("mason-lspconfig").setup_handlers({
+    ["jdtls"] = function()
+    end,
     function(server_name)
       local border = vim.g.border_style
       local opts = { noremap = true, silent = true }
