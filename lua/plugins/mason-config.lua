@@ -37,8 +37,6 @@ function M.config()
         border = border
       }
 
-      vim.keymap.set("n", "<LEADER>le", vim.diagnostic.open_float, opts)
-
       local on_attach = function(_, bufnr)
         local bufopts = {
           noremap = true,
@@ -62,6 +60,18 @@ function M.config()
           "<LEADER>gh",
           vim.lsp.buf.hover,
           bufopts
+        )
+        vim.keymap.set(
+          "n",
+          "<LEADER>rn",
+          vim.lsp.buf.rename,
+          bufopts
+        )
+        vim.keymap.set(
+          "n",
+          "<LEADER>le",
+          vim.diagnostic.open_float,
+          opts
         )
       end
 
