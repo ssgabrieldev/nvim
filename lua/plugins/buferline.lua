@@ -24,6 +24,12 @@ function M.config()
                     text_align = "center",
                     separator = true,
                 },
+                {
+                    filetype = "dapui_watches",
+                    text = "Debugger",
+                    text_align = "center",
+                    separator = true,
+                },
             },
             diagnostics = "nvim_lsp",
             indicator = {
