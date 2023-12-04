@@ -5,7 +5,7 @@ local M = {
     },
     tag = "nightly",
     keys = {
-        { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file explorer" }
+        { "<c-b>", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file explorer" }
     }
 }
 

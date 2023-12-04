@@ -1,10 +1,13 @@
 local M = {
   "williamboman/mason-lspconfig.nvim",
-  event = "BufEnter"
+  dependencies = {
+    "neovim/nvim-lspconfig"
+  },
+  lazy = false
 }
 
 function M.config()
-  require("mason-lspconfig").setup()
+  require("mason-lspconfig").setup({})
   require("mason-lspconfig").setup_handlers({
     function(server_name)
       local border = vim.g.border_style
@@ -19,7 +22,7 @@ function M.config()
           { border = border }
         ),
       }
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities = vim.lsp.protocol.make_client_capabilities({})
 
       capabilities.textDocument.completion.completionItem.snippetSupport = true
       vim.diagnostic.config({

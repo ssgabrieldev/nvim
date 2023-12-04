@@ -5,7 +5,8 @@ local M = {
     direction = 'float'
   },
   keys = {
-    { '<leader>t', ':ToggleTerm<cr>', { desc = 'Toggle terminal' } },
+    { '<c-t>', ':ToggleTerm<cr>', { desc = 'Toggle terminal' } },
+    { '<c-t>', '<cmd>ToggleTerm<cr>', mode = 't', { desc = 'Toggle terminal' } },
   }
 }
 

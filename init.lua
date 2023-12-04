@@ -20,7 +20,7 @@ require("lazy").setup("plugins")
 vim.wo.wrap = false
 vim.wo.number = true
 
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 vim.opt.cursorline = true
 vim.opt.guicursor = ""
 vim.opt.tabstop = 2

@@ -7,7 +7,7 @@ local M = {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
-    "hrsh7th/cmp-buffer"
+    "hrsh7th/cmp-buffer",
   },
   event = "InsertEnter"
 }
