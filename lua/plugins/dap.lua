@@ -8,7 +8,8 @@ local M = {
     { '<leader>dc', ':DapContinue<cr>', { desc = 'Debugger continue' } },
     { '<leader>de', ':DapTerminate<cr>', { desc = 'Debugger continue' } },
     { '<leader>dr', ':DapToggleRepl<cr>', { desc = 'Toggle repl' } },
-    { '<leader>dr', ':DapUiToggle<cr>', { desc = 'Toggle ui' } },
+    { '<leader>du', ':DapUiToggle<cr>', { desc = 'Toggle ui' } },
+    -- { '<leader>df', function() require('dapui').float_element(null, { enter = true }) end, { desc = 'Toggle ui' } },
   },
   config = function()
     local dap = require('dap')
@@ -28,18 +29,8 @@ local M = {
         cwd = vim.fn.getcwd(),
         sourceMaps = true,
         protocol = 'inspector',
-      },
-      {
-        name = 'Node Attach to Process',
-        type = 'node2',
-        request = 'attach',
-        processId = require'dap.utils'.pick_process,
-      },
+      }
     }
-
-    dap.listeners.after.event_initialized["dapui_config"] = function()
-      dapui.open()
-    end
 
     vim.api.nvim_create_user_command(
       'DapUiToggle',

@@ -2,7 +2,7 @@ local M = {
   'akinsho/toggleterm.nvim',
   version = "*",
   opts = {
-    direction = 'horizontal'
+    direction = 'float'
   },
   keys = {
     { '<c-j>', ':ToggleTerm<cr>', { desc = 'Toggle terminal' } },
