@@ -5,25 +5,49 @@ local M = {
   },
   keys = {
     { '<leader>db', ':DapToggleBreakpoint<cr>', { desc = 'Toggle breakpoint' } },
-    { '<leader>dc', ':DapContinue<cr>', { desc = 'Debugger continue' } },
-    { '<leader>de', ':DapTerminate<cr>', { desc = 'Debugger continue' } },
-    { '<leader>dr', ':DapToggleRepl<cr>', { desc = 'Toggle repl' } },
-    { '<leader>du', function() require('dapui').toggle({ reset = true }) end, { desc = 'Toggle ui' } },
-    { '<leader>df', function() require('dapui').float_element(null, { enter = true }) end, { desc = 'Toggle ui' } },
+    { '<leader>dc', ':DapContinue<cr>',         { desc = 'Debugger continue' } },
+    { '<leader>de', ':DapTerminate<cr>',        { desc = 'Debugger continue' } },
+    { '<leader>dr', ':DapToggleRepl<cr>',       { desc = 'Toggle repl' } },
+    {
+      '<leader>du',
+      function()
+        require('dapui').toggle({ reset = true })
+      end,
+      { desc = 'Toggle ui' }
+    },
+    {
+      '<leader>df',
+      function()
+        require('dapui').float_element(nil, { enter = true })
+      end,
+      { desc = 'Toggle ui' }
+    },
+    {
+      '<leader>dl',
+      function()
+        require('dap.ext.vscode').load_launchjs(
+          nil,
+          {
+            ["node"] = {'javascript'}
+          }
+        )
+      end,
+      { desc = 'Toggle ui' }
+    },
   },
   config = function()
     local dap = require('dap')
     local dapui = require('dapui')
 
-    dap.adapters.node2 = {
+    dap.adapters.node = {
       type = 'executable',
       command = vim.fn.stdpath('data') .. '/mason/bin/node-debug2-adapter',
     }
 
-    dap.configurations.javascript = {
-      {  
+    dap.configurations["javascript"] = {
+      {
         name = 'Node Launch',
-        type = 'node2',
+        type = 'node',
         request = 'launch',
         program = '${file}',
         cwd = vim.fn.getcwd(),
@@ -31,15 +55,6 @@ local M = {
         protocol = 'inspector',
       }
     }
-
-    vim.api.nvim_create_user_command(
-      'DapUiToggle',
-      function()
-        dapui.toggle()
-      end
-      ,
-      {}
-    )
 
     dapui.setup()
   end
