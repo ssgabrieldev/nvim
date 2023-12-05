@@ -31,3 +31,5 @@ vim.opt.swapfile = false
 vim.opt.splitright = true
 vim.opt.smartindent = true
 vim.opt.scrolloff = 5
+
+vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { silent = true })
