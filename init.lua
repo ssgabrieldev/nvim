@@ -22,7 +22,6 @@ vim.wo.number = true
 
 vim.opt.mouse = "a"
 vim.opt.cursorline = true
-vim.opt.guicursor = ""
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
