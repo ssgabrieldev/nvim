@@ -8,7 +8,7 @@ local M = {
     { '<leader>dc', ':DapContinue<cr>', { desc = 'Debugger continue' } },
     { '<leader>de', ':DapTerminate<cr>', { desc = 'Debugger continue' } },
     { '<leader>dr', ':DapToggleRepl<cr>', { desc = 'Toggle repl' } },
-    { '<leader>du', ':DapUiToggle<cr>', { desc = 'Toggle ui' } },
+    { '<leader>du', function() require('dapui').toggle({ reset = true }) end, { desc = 'Toggle ui' } },
     { '<leader>df', function() require('dapui').float_element(null, { enter = true }) end, { desc = 'Toggle ui' } },
   },
   config = function()
