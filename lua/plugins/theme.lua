@@ -1,19 +1,22 @@
 local M = {
-  'uloco/bluloco.nvim',
-  lazy = false,
+  'navarasu/onedark.nvim',
   priority = 1000,
-  dependencies = { 'rktjmp/lush.nvim' },
+  lazy = false,
   config = function()
-    require("bluloco").setup({
-      style       = "dark",
-      transparent = false,
-      italics     = false,
-      terminal    = vim.fn.has("gui_running") == 1,
-      guicursor   = true,
+    require("onedark").setup({
+      style             = "darker",
+      toggle_style_list = { 'darker', 'deep', 'cool', 'warmer', 'dark', 'warm' },
+      toggle_style_key = '<leader>ts',
+      term_colors       = true,
+      ending_tildes     = true,
+      diagnostics       = {
+        darker = true,
+        undercurl = true,
+        background = true,
+      },
     })
 
-    vim.opt.termguicolors = true
-    vim.cmd.colorscheme("bluloco")
+    require('onedark').load()
   end,
 }
 
