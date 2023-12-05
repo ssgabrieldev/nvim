@@ -32,4 +32,8 @@ vim.opt.splitright = true
 vim.opt.smartindent = true
 vim.opt.scrolloff = 5
 
+vim.keymap.set('n', '<A-h>', ':vertical resize -2<cr>', { silent = true })
+vim.keymap.set('n', '<A-l>', ':vertical resize +2<cr>', { silent = true })
+vim.keymap.set('n', '<A-j>', ':resize -2<cr>', { silent = true })
+vim.keymap.set('n', '<A-k>', ':resize +2<cr>', { silent = true })
 vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { silent = true })
