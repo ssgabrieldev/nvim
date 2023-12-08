@@ -4,12 +4,12 @@ local M = {
   lazy = false,
   config = function()
     require("onedark").setup({
-      style             = "darker",
+      style             = "deep",
       toggle_style_list = { 'darker', 'deep', 'cool', 'warmer', 'dark', 'warm' },
       toggle_style_key  = '<leader>ts',
       term_colors       = true,
       ending_tildes     = true,
-      transparent       = true,
+      transparent       = false,
       diagnostics       = {
         darker = true,
         undercurl = true,
