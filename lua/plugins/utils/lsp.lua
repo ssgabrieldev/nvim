@@ -48,7 +48,10 @@ M.on_attach = function(_, bufnr)
   vim.keymap.set(
     "n",
     "<LEADER>gh",
-    vim.lsp.buf.hover,
+    function()
+      vim.lsp.buf.hover()
+      vim.lsp.buf.hover()
+    end,
     bufopts
   )
   vim.keymap.set(
@@ -66,7 +69,10 @@ M.on_attach = function(_, bufnr)
   vim.keymap.set(
     "n",
     "<LEADER>le",
-    vim.diagnostic.open_float,
+    function()
+      vim.diagnostic.open_float()
+      vim.diagnostic.open_float()
+    end,
     opts
   )
 end
