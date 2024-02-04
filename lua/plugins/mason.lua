@@ -4,11 +4,7 @@ local M = {
 }
 
 function M.config()
-    require("mason").setup({
-        ui = {
-            border = vim.g.border_style
-        }
-    })
+    require("mason").setup({})
 end
 
 return M

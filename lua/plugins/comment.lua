@@ -1,8 +1,8 @@
 local M = {
     "terrortylor/nvim-comment",
     keys = {
-        { "<leader>/", ":CommentToggle<cr>", desc = "Pick buffer" },
-        { "<leader>/", ":CommentToggle<cr>", mode = 'v', { desc = "Pick buffer" } },
+        { "<leader>/", ":CommentToggle<cr>", desc = "Comment line" },
+        { "<leader>/", ":CommentToggle<cr>", mode = 'v', { desc = "Comment selected" } },
     },
     config = function()
       require('nvim_comment').setup()
