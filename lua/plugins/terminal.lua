@@ -1,12 +1,10 @@
 local M = {
   'akinsho/toggleterm.nvim',
   version = "*",
-  opts = {
-      direction = "float"
-  },
+  opts = {},
   keys = {
-    { '<c-j>', ':ToggleTerm<cr>', { desc = 'Toggle terminal' } },
-    { '<c-j>', '<cmd>ToggleTerm<cr>', mode = 't', { desc = 'Toggle terminal' } },
+    { '<leader>tf', ':ToggleTerm direction=float<CR>', { desc = 'Toggle terminal float' } },
+    { '<leader>th', ':ToggleTerm direction=horizontal<CR>', { desc = 'Toggle terminal horizontal' } },
   }
 }
 
