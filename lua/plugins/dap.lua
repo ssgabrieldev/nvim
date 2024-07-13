@@ -2,6 +2,7 @@ local M = {
   'rcarriga/nvim-dap-ui',
   dependencies = {
     "mfussenegger/nvim-dap",
+    "nvim-neotest/nvim-nio"
   },
   keys = {
     { '<leader>db', ':DapToggleBreakpoint<cr>', { desc = 'Toggle breakpoint' } },
