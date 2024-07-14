@@ -29,7 +29,7 @@ local M = {
         require('dap.ext.vscode').load_launchjs(
           nil,
           {
-            ["node"] = {'javascript'}
+            ["node"] = { 'javascript' }
           }
         )
       end,
