@@ -3,7 +3,7 @@ local M = {
   version = "*",
   opts = {},
   keys = {
-    { '<leader>tt', ':ToggleTerm', { desc = 'Toggle terminal' } },
+    { '<leader>tt', ':ToggleTerm<CR>', { desc = 'Toggle terminal' } },
     { '<leader>tf', ':ToggleTerm direction=float<CR>', { desc = 'Toggle terminal float' } },
     { '<leader>th', ':ToggleTerm direction=horizontal<CR>', { desc = 'Toggle terminal horizontal' } },
   }
