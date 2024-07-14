@@ -4,7 +4,8 @@ local M = {
     lazy = false,
     config = function()
         require("onedark").setup({
-            style         = "darker"
+            style = "darker",
+            transparent = true
         })
 
         require('onedark').load()
