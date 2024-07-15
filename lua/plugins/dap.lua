@@ -6,23 +6,8 @@ local M = {
   },
   keys = {
     { '<leader>db', ':DapToggleBreakpoint<cr>', { desc = 'Toggle breakpoint' } },
+    { '<leader>dt', ':DapTerminate<cr>',        { desc = 'Debugger terminate' } },
     { '<leader>dc', ':DapContinue<cr>',         { desc = 'Debugger continue' } },
-    { '<leader>de', ':DapTerminate<cr>',        { desc = 'Debugger exit' } },
-    { '<leader>dr', ':DapToggleRepl<cr>',       { desc = 'Toggle repl' } },
-    {
-      '<leader>du',
-      function()
-        require('dapui').toggle({ reset = true })
-      end,
-      { desc = 'Toggle ui' }
-    },
-    {
-      '<leader>df',
-      function()
-        require('dapui').float_element(nil, { enter = true })
-      end,
-      { desc = 'Toggle ui' }
-    },
     {
       '<leader>dl',
       function()
@@ -34,6 +19,34 @@ local M = {
         )
       end,
       { desc = 'Toggle ui' }
+    },
+    {
+      '<leader>dou',
+      function()
+        require('dapui').toggle({ reset = true })
+      end,
+      { desc = 'Toggle ui' }
+    },
+    {
+      '<leader>dor',
+      function()
+        require('dapui').float_element("repl", { enter = true })
+      end,
+      { desc = 'Toggle repl' }
+    },
+    {
+      '<leader>dob',
+      function()
+        require('dapui').float_element("breakpoints", { enter = true })
+      end,
+      { desc = 'Toggle repl' }
+    },
+    {
+      '<leader>dow',
+      function()
+        require('dapui').float_element("watches", { enter = true })
+      end,
+      { desc = 'Toggle repl' }
     },
   },
   config = function()
