@@ -7,7 +7,13 @@ local M = {
 }
 
 function M.config()
-  require("mason-lspconfig").setup({})
+  require("mason-lspconfig").setup({
+    ensure_installed = {
+      "lua-language-server",
+      "node-debug2-adapter",
+      "typescript-language-server",
+    }
+  })
   require("mason-lspconfig").setup_handlers({
     function(server_name)
       local utils_lsp = require('plugins.utils.lsp')
