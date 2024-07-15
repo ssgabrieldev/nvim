@@ -6,7 +6,7 @@ local M = {
   },
   keys = {
     { "<leader>db", ":DapToggleBreakpoint<cr>", desc = "Debugger toggle breakpoint" },
-    { "<leader>dt", ":DapTerminate<cr>",        desc = "Debugger terminate" },
+    { "<leader>de", ":DapTerminate<cr>",        desc = "Debugger terminate" },
     { "<leader>dc", ":DapContinue<cr>",         desc = "Debugger continue" },
     {
       "<leader>dl",
