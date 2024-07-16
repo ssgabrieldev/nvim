@@ -10,6 +10,6 @@ tar -xvzf nvim-linux64.tar.gz
 
 tar -xvzf community_images.tar.gz
 
-echo 'alias nvim="~/apps/nvim-linux64/bin/nvim"' >> ~/.bashrc
+echo 'export PATH=$PATH:~/apps/nvim-linux64/bin' >> ~/.bashrc
 
 apt install ripgrep
