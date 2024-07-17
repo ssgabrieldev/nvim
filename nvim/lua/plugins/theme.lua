@@ -5,7 +5,7 @@ local M = {
   config = function()
     require("onedark").setup({
       style = "deep",
-      transparent = false
+      transparent = true
     })
 
     require('onedark').load()
