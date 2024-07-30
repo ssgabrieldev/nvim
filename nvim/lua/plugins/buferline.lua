@@ -6,8 +6,10 @@ local M = {
   keys = {
     { "<leader>bp", "<cmd>BufferLinePick<CR>",       desc = "Buffer line pick buffer" },
     { "<leader>bc", "<cmd>BufferLinePickClose<CR>",  desc = "Buffer line close a buffer" },
-    { "<leader>bh", "<cmd>BufferLineCloseLeft<CR>",  desc = "Buffer line close all buffer on the left" },
-    { "<leader>bl", "<cmd>BufferLineCloseRight<CR>", desc = "Buffer line close all buffer on the right" },
+    { "<leader>b<S-h>", "<cmd>BufferLineCloseLeft<CR>",  desc = "Buffer line close all buffer on the left" },
+    { "<leader>b<S-l>", "<cmd>BufferLineCloseRight<CR>", desc = "Buffer line close all buffer on the right" },
+    { "<leader>bh", "<cmd>BufferLineMovePrev<CR>",  desc = "Buffer line close all buffer on the left" },
+    { "<leader>bl", "<cmd>BufferLineMoveNext<CR>", desc = "Buffer line close all buffer on the right" },
     { "<tab>",      "<cmd>BufferLineCycleNext<CR>",  desc = "Buffer line next buffer" },
     { "<s-tab>",    "<cmd>BufferLineCyclePrev<CR>",  desc = "Buffer line prev buffer" }
   },

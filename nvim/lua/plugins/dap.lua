@@ -28,6 +28,22 @@ local M = {
       desc = "Debugger toggle ui"
     },
     {
+      "<leader>dov",
+      function()
+        require("dapui").eval()
+      end,
+      desc = "Debugger toggle ui",
+      mode = "n"
+    },
+    {
+      "<leader>dov",
+      function()
+        require("dapui").eval()
+      end,
+      desc = "Debugger toggle ui",
+      mode = "v"
+    },
+    {
       "<leader>dor",
       function()
         require("dapui").float_element("repl", { enter = true })
